@@ -26,7 +26,6 @@ public class InsertionSort {
 
 			S++;
 		}
-		System.out.println("end " + sortedList.toJava());
 		return sortedList;
 	}
 
