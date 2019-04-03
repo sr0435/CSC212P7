@@ -23,20 +23,18 @@ public class SelectionSort {
 
 	public static void selectionSort(ListADT<Integer> input) {
 		int N = input.size();
+		int counter = N;
 		while(true) {
 			// goes through the list until the end of the unsorted objects
 			for (int i=0; i<N; i++) {
 				// gets the index of the min
-				int minIndex = findMin(input,0,N);
-				// remove the value at the min index
-				int removed = input.removeIndex(minIndex);
-				// add that to the back
-				input.addBack(removed);
-				// "decrease" the size so you only check the unsorted parts
-				N--;
+				int minIndex = findMin(input,i,N);
+				// swaps the minimum of the unsorted part with the spot in the list
+				input.swap(i, minIndex);
+				counter--;
 			}
 			// exits the loop if everything has been checked and sorted
-			if (N==0) {
+			if (counter==0) {
 				break;
 			}
 		}
